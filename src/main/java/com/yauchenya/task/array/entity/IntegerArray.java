@@ -1,9 +1,17 @@
-package com.yauchenya.task.array.action.entity;
+package com.yauchenya.task.array.entity;
 
-public class Array {
+import com.yauchenya.task.array.exception.IntegerArrayException;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import static com.yauchenya.task.array.validator.IntegerArrayValidator.isArrayEmpty;
+
+public class IntegerArray {
+    static Logger logger = LogManager.getLogger();
     private int[] array;
 
-    public Array(int ... elements){
+    public IntegerArray(int ... elements){
+        logger.info("Created new array");
         array = new int[elements.length];
 
         for (int i = 0; i < array.length; i++) {
@@ -15,7 +23,10 @@ public class Array {
         return  array;
     }
 
-    public void setArray(int ... elements){
+    public void setArray(int ... elements) throws IntegerArrayException {
+        if(isArrayEmpty(this)){
+            throw new IntegerArrayException("Array is empty!");
+        }
         if(elements.length == array.length) {
             for (int i = 0; i < array.length; i++) {
                 array[i] = elements[i];
@@ -36,16 +47,4 @@ public class Array {
             array[index] = value;
         }
     }
-
-
-
-
-
-    public void printArray(){
-        for (int i = 0; i < array.length; i++) {
-            System.out.print(array[i] + " ");
-        }
-        System.out.println();
-    }
-
 }
