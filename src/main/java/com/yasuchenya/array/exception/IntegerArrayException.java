@@ -1,8 +1,6 @@
-package com.yauchenya.task.array.exception;
+package com.yasuchenya.array.exception;
 
-import java.io.IOException;
-
-public class IntegerArrayException extends IOException {
+public class IntegerArrayException extends Exception {
 
     public IntegerArrayException() {
         super();

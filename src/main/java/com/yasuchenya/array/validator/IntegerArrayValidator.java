@@ -1,6 +1,6 @@
-package com.yauchenya.task.array.validator;
+package com.yasuchenya.array.validator;
 
-import com.yauchenya.task.array.entity.IntegerArray;
+import com.yasuchenya.array.entity.IntegerArray;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

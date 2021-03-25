@@ -1,18 +1,17 @@
-package com.yauchenya.task.array.action;
+package com.yasuchenya.array.action;
 
-import com.yauchenya.task.array.entity.IntegerArray;
-import com.yauchenya.task.array.exception.IntegerArrayException;
+import com.yasuchenya.array.validator.IntegerArrayValidator;
+import com.yasuchenya.array.entity.IntegerArray;
+import com.yasuchenya.array.exception.IntegerArrayException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
-import static com.yauchenya.task.array.validator.IntegerArrayValidator.isArrayEmpty;
 
 public class Sorting {
     static Logger logger = LogManager.getLogger();
 
     public static void bubbleSortAscending(IntegerArray sourceArray) throws IntegerArrayException {
         logger.info("Bubble sort method invoked");
-        if(isArrayEmpty(sourceArray)){
+        if(IntegerArrayValidator.isArrayEmpty(sourceArray)){
             throw new IntegerArrayException("Array is empty!");
         }
         int size = sourceArray.size();
@@ -28,7 +27,7 @@ public class Sorting {
 
     public static void gnomeSortAscending(IntegerArray sourceArray) throws IntegerArrayException{
         logger.info("Gnome sort method invoked");
-        if(isArrayEmpty(sourceArray)){
+        if(IntegerArrayValidator.isArrayEmpty(sourceArray)){
             throw new IntegerArrayException("Array is empty!");
         }
         int size = sourceArray.size();
@@ -48,7 +47,7 @@ public class Sorting {
 
     public static void insertionSortAscending(IntegerArray sourceArray) throws IntegerArrayException{
         logger.info("Insertion sort method invoked");
-        if(isArrayEmpty(sourceArray)){
+        if(IntegerArrayValidator.isArrayEmpty(sourceArray)){
             throw new IntegerArrayException("Array is empty!");
         }
         int size = sourceArray.size();

@@ -1,7 +1,7 @@
-package com.yauchenya.task.array.parser;
+package com.yasuchenya.array.parser;
 
-import com.yauchenya.task.array.entity.IntegerArray;
-import com.yauchenya.task.array.validator.IntegerArrayValidator;
+import com.yasuchenya.array.validator.IntegerArrayValidator;
+import com.yasuchenya.array.entity.IntegerArray;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -9,8 +9,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
-
-import static com.yauchenya.task.array.validator.IntegerArrayValidator.isArrayOfIntegers;
 
 
 public class StringsToArraysParser {
@@ -36,7 +34,7 @@ public class StringsToArraysParser {
             int count = 0;
             for(int j = 0; j < currentString.size(); j++){
                 String string = currentString.get(j);
-                if(!isArrayOfIntegers(string) && string != "\n"){
+                if(!IntegerArrayValidator.isArrayOfIntegers(string) && string != "\n"){
                     count++;
                     logger.error("Invalid string in line " + i);
                 }

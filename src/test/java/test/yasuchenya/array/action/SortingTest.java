@@ -1,10 +1,10 @@
-package test.yasuchenya.task.array.action;
+package test.yasuchenya.array.action;
 
-import com.yauchenya.task.array.action.Sorting;
-import com.yauchenya.task.array.entity.IntegerArray;
-import com.yauchenya.task.array.exception.IntegerArrayException;
-import com.yauchenya.task.array.parser.StringsToArraysParser;
-import com.yauchenya.task.array.reader.TextFileReader;
+import com.yasuchenya.array.action.Sorting;
+import com.yasuchenya.array.entity.IntegerArray;
+import com.yasuchenya.array.exception.IntegerArrayException;
+import com.yasuchenya.array.parser.StringsToArraysParser;
+import com.yasuchenya.array.reader.TextFileReader;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.testng.Assert;

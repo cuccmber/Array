@@ -1,10 +1,9 @@
-package com.yauchenya.task.array.entity;
+package com.yasuchenya.array.entity;
 
-import com.yauchenya.task.array.exception.IntegerArrayException;
+import com.yasuchenya.array.validator.IntegerArrayValidator;
+import com.yasuchenya.array.exception.IntegerArrayException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
-import static com.yauchenya.task.array.validator.IntegerArrayValidator.isArrayEmpty;
 
 public class IntegerArray {
     static Logger logger = LogManager.getLogger();
@@ -24,7 +23,7 @@ public class IntegerArray {
     }
 
     public void setArray(int ... elements) throws IntegerArrayException {
-        if(isArrayEmpty(this)){
+        if(IntegerArrayValidator.isArrayEmpty(this)){
             throw new IntegerArrayException("Array is empty!");
         }
         if(elements.length == array.length) {

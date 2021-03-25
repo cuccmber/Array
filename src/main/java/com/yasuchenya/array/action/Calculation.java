@@ -1,20 +1,19 @@
-package com.yauchenya.task.array.action;
+package com.yasuchenya.array.action;
 
-import com.yauchenya.task.array.entity.IntegerArray;
-import com.yauchenya.task.array.exception.IntegerArrayException;
+import com.yasuchenya.array.validator.IntegerArrayValidator;
+import com.yasuchenya.array.entity.IntegerArray;
+import com.yasuchenya.array.exception.IntegerArrayException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.util.stream.IntStream;
-
-import static com.yauchenya.task.array.validator.IntegerArrayValidator.isArrayEmpty;
 
 public class Calculation {
     static Logger logger = LogManager.getLogger();
 
     public double calculateAvg(IntegerArray sourceArray) throws IntegerArrayException {
         logger.info("Calculate average method invoked");
-        if(isArrayEmpty(sourceArray)){
+        if(IntegerArrayValidator.isArrayEmpty(sourceArray)){
             throw new IntegerArrayException("Array is empty!");
         }
         int sum = 0;
@@ -27,7 +26,7 @@ public class Calculation {
 
     public int findMaxValue(IntegerArray sourceArray) throws IntegerArrayException{
         logger.info("Find max value method invoked");
-        if(isArrayEmpty(sourceArray)){
+        if(IntegerArrayValidator.isArrayEmpty(sourceArray)){
             throw new IntegerArrayException("Array is empty!");
         }
         int max = sourceArray.getElement(0);
@@ -42,7 +41,7 @@ public class Calculation {
 
     public int findMinValue(IntegerArray sourceArray) throws IntegerArrayException{
         logger.info("Find min value method invoked");
-        if(isArrayEmpty(sourceArray)){
+        if(IntegerArrayValidator.isArrayEmpty(sourceArray)){
             throw new IntegerArrayException("Array is empty!");
         }
         int min = sourceArray.getElement(0);
@@ -57,7 +56,7 @@ public class Calculation {
 
     public int calculateSum(IntegerArray sourceArray) throws IntegerArrayException{
         logger.info("Calculate sum method invoked");
-        if(isArrayEmpty(sourceArray)){
+        if(IntegerArrayValidator.isArrayEmpty(sourceArray)){
             throw new IntegerArrayException("Array is empty!");
         }
         int sum = 0;
@@ -70,7 +69,7 @@ public class Calculation {
 
     public int calculatePositiveSum(IntegerArray sourceArray) throws IntegerArrayException{
         logger.info("Calculate sum of positives method invoked");
-        if(isArrayEmpty(sourceArray)){
+        if(IntegerArrayValidator.isArrayEmpty(sourceArray)){
             throw new IntegerArrayException("Array is empty!");
         }
         int sum = 0;
@@ -85,7 +84,7 @@ public class Calculation {
 
     public double calculateAvgStream(IntegerArray sourceArray) throws IntegerArrayException{
         logger.info("Calculate average via stream method invoked");
-        if(isArrayEmpty(sourceArray)){
+        if(IntegerArrayValidator.isArrayEmpty(sourceArray)){
             throw new IntegerArrayException("Array is empty!");
         }
         int[] array = sourceArray.getArray();
@@ -95,7 +94,7 @@ public class Calculation {
 
     public int findMaxValueStream(IntegerArray sourceArray) throws IntegerArrayException{
         logger.info("Find max value via stream method invoked");
-        if(isArrayEmpty(sourceArray)){
+        if(IntegerArrayValidator.isArrayEmpty(sourceArray)){
             throw new IntegerArrayException("Array is empty!");
         }
         int[] array = sourceArray.getArray();
@@ -105,7 +104,7 @@ public class Calculation {
 
     public int findMinValueStream(IntegerArray sourceArray) throws IntegerArrayException{
         logger.info("Find min value via stream method invoked");
-        if(isArrayEmpty(sourceArray)){
+        if(IntegerArrayValidator.isArrayEmpty(sourceArray)){
             throw new IntegerArrayException("Array is empty!");
         }
         int[] array = sourceArray.getArray();
@@ -115,7 +114,7 @@ public class Calculation {
 
     public int calculateSumStream(IntegerArray sourceArray) throws IntegerArrayException{
         logger.info("Calculate sum via stream method invoked");
-        if(isArrayEmpty(sourceArray)){
+        if(IntegerArrayValidator.isArrayEmpty(sourceArray)){
             throw new IntegerArrayException("Array is empty!");
         }
         int[] array = sourceArray.getArray();
@@ -125,7 +124,7 @@ public class Calculation {
 
     public int calculatePositiveSumStream(IntegerArray sourceArray) throws IntegerArrayException{
         logger.info("Calculate sum of positives via stream method invoked");
-        if(isArrayEmpty(sourceArray)){
+        if(IntegerArrayValidator.isArrayEmpty(sourceArray)){
             throw new IntegerArrayException("Array is empty!");
         }
         int[] array = sourceArray.getArray();
