@@ -62,12 +62,11 @@ public class IntegerArray {
             return true;
         }
         IntegerArray temp = (IntegerArray) o;
-        return o instanceof IntegerArray && super.equals(o) && array.equals(temp.array);
+        return o instanceof IntegerArray && array.equals(temp.array);
     }
 
     @Override
     public String toString(){
         return "Array:" + array.toString();
     }
-
 }
