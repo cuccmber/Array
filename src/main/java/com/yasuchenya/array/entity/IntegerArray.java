@@ -19,7 +19,8 @@ public class IntegerArray {
     }
 
     public int[] getArray(){
-        return  array;
+        int[] arrayCopy = array;
+        return arrayCopy;
     }
 
     public void setArray(int ... elements) throws IntegerArrayException {
@@ -46,4 +47,27 @@ public class IntegerArray {
             array[index] = value;
         }
     }
+
+    @Override
+    public int hashCode(){
+        final int PRIME = 31;
+        int result = 1;
+        result = PRIME * result + array.hashCode();
+        return result;
+    }
+
+    @Override
+    public boolean equals(Object o){
+        if(this == o){
+            return true;
+        }
+        IntegerArray temp = (IntegerArray) o;
+        return o instanceof IntegerArray && super.equals(o) && array.equals(temp.array);
+    }
+
+    @Override
+    public String toString(){
+        return "Array:" + array.toString();
+    }
+
 }
