@@ -1,6 +1,7 @@
-package test.yasuchenya.array.action;
+package test.yasuchenya.array.service.impl;
 
-import com.yasuchenya.array.action.Sorting;
+import com.yasuchenya.array.service.ArrayReplacingService;
+import com.yasuchenya.array.service.impl.ArrayReplacingServiceImpl;
 import com.yasuchenya.array.entity.IntegerArray;
 import com.yasuchenya.array.exception.IntegerArrayException;
 import com.yasuchenya.array.parser.StringsToArraysParser;
@@ -13,57 +14,34 @@ import org.testng.annotations.Test;
 
 import java.util.List;
 
-public class SortingTest {
+public class ArrayReplacingServiceImplTest {
     static Logger logger = LogManager.getLogger();
+    private ArrayReplacingService arrayReplacingService;
     private IntegerArray testArray;
-    private final int[] EXPECTED_SORTED_ARRAY = {-1, 2, 3, 4, 7};
-    private static final String FILEPATH = "./src/main/resources/input/input.txt";
-    private static final int ARRAY_NUMBER = 0;
-
+    private final int[] EXPECTED_ARRAY = {1, 1};
+    private static final String FILEPATH = "/input/input.txt";
+    private static final int ARRAY_NUMBER = 1;
 
     @BeforeClass
-    public void setUp(){
+    public void setUp() throws IntegerArrayException {
+        arrayReplacingService = new ArrayReplacingServiceImpl();
         TextFileReader textFileReader = new TextFileReader();
         List<String> readStrings = textFileReader.readFromTextFile(FILEPATH);
         StringsToArraysParser stringsToArraysParser = new StringsToArraysParser();
         List<List<String>> splitStrings = stringsToArraysParser.splitStrings(readStrings);
         List<IntegerArray> sourceArrays = stringsToArraysParser.parseStrings(splitStrings);
         testArray = sourceArrays.get(ARRAY_NUMBER);
-    }
 
+    }
     @Test
-    public void testBubbleSortAscending() {
+    public void testReplaceItem() {
         try {
-            Sorting.bubbleSortAscending(testArray);
+            arrayReplacingService.replaceElement(testArray);
         } catch (IntegerArrayException e) {
             logger.error("Array is empty");
         }
         int[] actual = testArray.getArray();
-        int[] expected = EXPECTED_SORTED_ARRAY;
-        Assert.assertEquals(actual, expected);
-    }
-
-    @Test
-    public void testGnomeSortAscending() {
-        try {
-            Sorting.gnomeSortAscending(testArray);
-        } catch (IntegerArrayException e) {
-            logger.error("Array is empty");
-        }
-        int[] actual = testArray.getArray();
-        int[] expected = EXPECTED_SORTED_ARRAY;
-        Assert.assertEquals(actual, expected);
-    }
-
-    @Test
-    public void testInsertionSortAscending() {
-        try {
-            Sorting.insertionSortAscending(testArray);
-        } catch (IntegerArrayException e) {
-            logger.error("Array is empty");
-        }
-        int[] actual = testArray.getArray();
-        int[] expected = EXPECTED_SORTED_ARRAY;
+        int[] expected = EXPECTED_ARRAY;
         Assert.assertEquals(actual, expected);
     }
 }

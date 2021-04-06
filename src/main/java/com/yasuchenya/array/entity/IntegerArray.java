@@ -9,47 +9,46 @@ public class IntegerArray {
     static Logger logger = LogManager.getLogger();
     private int[] array;
 
-    public IntegerArray(int ... elements){
+    public IntegerArray(int ... elements) {
         logger.info("Created new array");
         array = new int[elements.length];
-
         for (int i = 0; i < array.length; i++) {
             array[i] = elements[i];
         }
     }
 
     public int[] getArray(){
-        int[] arrayCopy = array;
+        int[] arrayCopy = array.clone();
         return arrayCopy;
     }
 
     public void setArray(int ... elements) throws IntegerArrayException {
-        if(IntegerArrayValidator.isArrayEmpty(this)){
+        if (IntegerArrayValidator.isArrayEmpty(this)) {
             throw new IntegerArrayException("Array is empty!");
         }
-        if(elements.length == array.length) {
+        if (elements.length == array.length) {
             for (int i = 0; i < array.length; i++) {
                 array[i] = elements[i];
             }
         }
     }
 
-    public int getElement(int index){
+    public int getElement(int index) {
         return array[index];
     }
 
-    public int size(){
+    public int size() {
         return array.length;
     }
 
-    public void setElement(int value, int index){
-        if(index < array.length){
+    public void setElement(int value, int index) {
+        if (index < array.length) {
             array[index] = value;
         }
     }
 
     @Override
-    public int hashCode(){
+    public int hashCode() {
         final int PRIME = 31;
         int result = 1;
         result = PRIME * result + array.hashCode();
@@ -57,16 +56,19 @@ public class IntegerArray {
     }
 
     @Override
-    public boolean equals(Object o){
-        if(this == o){
+    public boolean equals(Object o) {
+        if (this == o) {
             return true;
         }
+        if (this == null) {
+            return false;
+        }
         IntegerArray temp = (IntegerArray) o;
-        return o instanceof IntegerArray && array.equals(temp.array);
+        return getClass() == temp.getClass() && array.equals(temp.array);
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         return "Array:" + array.toString();
     }
 }

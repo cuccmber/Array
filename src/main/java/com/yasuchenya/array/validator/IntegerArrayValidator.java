@@ -8,7 +8,7 @@ public class IntegerArrayValidator {
     static Logger logger = LogManager.getLogger();
     private static final String ARRAY_ELEMENT_PATTERN = "(?<=(^| ))((\\+|\\-)?\\d+)(?=( |$))";
 
-    public static boolean isArrayOfIntegers(String sourceString){
+    public static boolean isArrayOfIntegers(String sourceString) {
         boolean result = sourceString.matches(ARRAY_ELEMENT_PATTERN);
         logger.info("Result of value validation is " + result);
         return result;

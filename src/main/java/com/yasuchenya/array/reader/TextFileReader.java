@@ -1,33 +1,25 @@
 package com.yasuchenya.array.reader;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
+import com.yasuchenya.array.exception.IntegerArrayException;
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class TextFileReader {
-    static Logger logger = LogManager.getLogger();
 
-    public List<String> readFromTextFile(String fileName){
-        List<String> strings = null;
-        Path filePath = Paths.get(fileName);
-        if(Files.exists(filePath) && !Files.isDirectory(filePath) && Files.isReadable(filePath)) {
-            Stream<String> stringStream = null;
-            try {
-                stringStream = Files.lines(filePath);
-            } catch (IOException e) {
-                logger.error("IOException while reading file  " + filePath + ": " + e.getMessage());
-            }
-            strings = stringStream.collect(Collectors.toList());
-        } else {
-            logger.error("Error occurred while reading file" + filePath.toString());
+public class TextFileReader {
+
+    public List<String> readFromTextFile(String fileName) throws IntegerArrayException {
+        InputStream inputStream = this.getClass().getResourceAsStream(fileName);
+        if (inputStream == null) {
+            throw new IntegerArrayException("Unable to read file" + fileName);
         }
+        InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
+        BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+        Stream<String> stringStream = bufferedReader.lines();
+        List<String> strings = stringStream.collect(Collectors.toList());
         return strings;
     }
 }

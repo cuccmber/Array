@@ -1,42 +1,44 @@
-package com.yasuchenya.array.action;
+package com.yasuchenya.array.service.impl;
 
+import com.yasuchenya.array.service.ArraySortingService;
 import com.yasuchenya.array.validator.IntegerArrayValidator;
 import com.yasuchenya.array.entity.IntegerArray;
 import com.yasuchenya.array.exception.IntegerArrayException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class Sorting {
+public class ArraySortingServiceImpl implements ArraySortingService {
     static Logger logger = LogManager.getLogger();
 
-    public static void bubbleSortAscending(IntegerArray sourceArray) throws IntegerArrayException {
+    public void bubbleSortAscending(IntegerArray sourceArray) throws IntegerArrayException {
         logger.info("Bubble sort method invoked");
-        if(IntegerArrayValidator.isArrayEmpty(sourceArray)){
+        if (IntegerArrayValidator.isArrayEmpty(sourceArray)) {
             throw new IntegerArrayException("Array is empty!");
         }
         int size = sourceArray.size();
-        for (int i = 0; i < size - 1; i++)
+        for (int i = 0; i < size - 1; i++) {
             for (int j = 0; j < size - i - 1; j++)
-                if (sourceArray.getElement(j) > sourceArray.getElement(j + 1))
-                {
+                if (sourceArray.getElement(j) > sourceArray.getElement(j + 1)) {
                     int temp = sourceArray.getElement(j);
                     sourceArray.setElement(sourceArray.getElement(j + 1), j);
                     sourceArray.setElement(temp, j + 1);
                 }
+        }
     }
 
-    public static void gnomeSortAscending(IntegerArray sourceArray) throws IntegerArrayException{
+    public void gnomeSortAscending(IntegerArray sourceArray) throws IntegerArrayException {
         logger.info("Gnome sort method invoked");
-        if(IntegerArrayValidator.isArrayEmpty(sourceArray)){
+        if (IntegerArrayValidator.isArrayEmpty(sourceArray)) {
             throw new IntegerArrayException("Array is empty!");
         }
         int size = sourceArray.size();
         for (int i = 0; i < size; i++) {
-            if (i == 0)
+            if (i == 0) {
                 i++;
-            if (sourceArray.getElement(i) >= sourceArray.getElement(i - 1))
+            }
+            if (sourceArray.getElement(i) >= sourceArray.getElement(i - 1)) {
                 i++;
-            else {
+            } else {
                 int temp = sourceArray.getElement(i);
                 sourceArray.setElement(sourceArray.getElement(i - 1), i);
                 sourceArray.setElement(temp, i - 1);
@@ -45,9 +47,9 @@ public class Sorting {
         }
     }
 
-    public static void insertionSortAscending(IntegerArray sourceArray) throws IntegerArrayException{
+    public void insertionSortAscending(IntegerArray sourceArray) throws IntegerArrayException {
         logger.info("Insertion sort method invoked");
-        if(IntegerArrayValidator.isArrayEmpty(sourceArray)){
+        if (IntegerArrayValidator.isArrayEmpty(sourceArray)) {
             throw new IntegerArrayException("Array is empty!");
         }
         int size = sourceArray.size();
