@@ -1,7 +1,7 @@
-package com.yasuchenya.array.parser;
+package by.yasuchenya.array.parser;
 
-import com.yasuchenya.array.validator.IntegerArrayValidator;
-import com.yasuchenya.array.entity.IntegerArray;
+import by.yasuchenya.array.validator.IntegerArrayValidator;
+import by.yasuchenya.array.entity.IntegerArray;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import java.util.ArrayList;

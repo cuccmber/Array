@@ -1,9 +1,9 @@
-package com.yasuchenya.array.service.impl;
+package by.yasuchenya.array.service.impl;
 
-import com.yasuchenya.array.service.ArraySortingService;
-import com.yasuchenya.array.validator.IntegerArrayValidator;
-import com.yasuchenya.array.entity.IntegerArray;
-import com.yasuchenya.array.exception.IntegerArrayException;
+import by.yasuchenya.array.validator.IntegerArrayValidator;
+import by.yasuchenya.array.service.ArraySortingService;
+import by.yasuchenya.array.entity.IntegerArray;
+import by.yasuchenya.array.exception.IntegerArrayException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

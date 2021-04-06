@@ -1,4 +1,4 @@
-package com.yasuchenya.array.exception;
+package by.yasuchenya.array.exception;
 
 public class IntegerArrayException extends Exception {
 

@@ -1,6 +1,6 @@
-package com.yasuchenya.array.validator;
+package by.yasuchenya.array.validator;
 
-import com.yasuchenya.array.entity.IntegerArray;
+import by.yasuchenya.array.entity.IntegerArray;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

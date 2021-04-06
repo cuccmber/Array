@@ -1,6 +1,6 @@
-package com.yasuchenya.array.reader;
+package by.yasuchenya.array.reader;
 
-import com.yasuchenya.array.exception.IntegerArrayException;
+import by.yasuchenya.array.exception.IntegerArrayException;
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;

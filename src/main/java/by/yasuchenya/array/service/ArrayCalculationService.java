@@ -1,7 +1,7 @@
-package com.yasuchenya.array.service;
+package by.yasuchenya.array.service;
 
-import com.yasuchenya.array.entity.IntegerArray;
-import com.yasuchenya.array.exception.IntegerArrayException;
+import by.yasuchenya.array.entity.IntegerArray;
+import by.yasuchenya.array.exception.IntegerArrayException;
 
 public interface ArrayCalculationService {
 

@@ -1,17 +1,16 @@
 package test.yasuchenya.array.service.impl;
 
-import com.yasuchenya.array.service.ArraySortingService;
-import com.yasuchenya.array.service.impl.ArraySortingServiceImpl;
-import com.yasuchenya.array.entity.IntegerArray;
-import com.yasuchenya.array.exception.IntegerArrayException;
-import com.yasuchenya.array.parser.StringsToArraysParser;
-import com.yasuchenya.array.reader.TextFileReader;
+import by.yasuchenya.array.service.ArraySortingService;
+import by.yasuchenya.array.service.impl.ArraySortingServiceImpl;
+import by.yasuchenya.array.entity.IntegerArray;
+import by.yasuchenya.array.exception.IntegerArrayException;
+import by.yasuchenya.array.parser.StringsToArraysParser;
+import by.yasuchenya.array.reader.TextFileReader;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-
 import java.util.List;
 
 public class ArraySortingServiceImplTest {
